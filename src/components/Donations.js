@@ -1,39 +1,46 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Articulo from './Donation';
+import Suscriber from './Donation';
 
 class Donations extends Component {
   state = {
-    titulo: "Donations",
-    articulos: [],
+    titulo: "Donaciones Registradas!",
+    suscribers: [],
   };
+
+  /*
+  suscriber: String,   - nombre  - puede ser tambien nickname 
+      amount: Number, --- exisencias - pin
+    message: String, --- precio - email
+  */
 
   // El componente se montó
   componentDidMount() {
-    const URL = 'https://supermercado-devf.herokuapp.com/api/v1/articulos';
+    const URL = 'https://api-gt.herokuapp.com/api/v1/Donations';
+    
     axios.get(URL)
       .then(response => {
-        const articulos = response.data;
-        this.setState({ articulos });
+        const suscribers = response.data;
+        this.setState({ suscribers });
       })
       .catch(err => console.log(err));
   }
 
-  renderizarArticulos() {
-    const { articulos } = this.state;
-    if (articulos.length === 0) {
-      return <span>Cargando artículos...</span>
-    } else if (articulos.length > 0) {
+  renderizarSuscriber() {
+    const { suscribers } = this.state;
+    if (suscribers.length === 0) {
+      return <span>Cargando suscriptores...</span>
+    } else if (suscribers.length > 0) {
       // ¿Cómo itero y muestro cada elemento de mi arreglo de artículos?
       return (
         <React.Fragment>
-          <span>Se encontraron {articulos.length} artículos</span>
-          { articulos.map(articulo => {
+          <span>Estas son las donaciones que tenemos registradas: {suscribers.length} suscribers</span>
+          { suscribers.map(nickname => {
             return (
-              <Articulo 
-                precio={articulo.precio}
-                existencias={articulo.existencias}
-                nombre={articulo.nombre} />
+              <Suscriber 
+                message={nickname.message}
+                amount={nickname.amount}
+                suscriber={nickname.suscriber} />
             )
           })}
         </React.Fragment>
@@ -45,7 +52,7 @@ class Donations extends Component {
     return (
       <React.Fragment>
         <h3>{ this.state.titulo }</h3>
-        { this.renderizarArticulos() }
+        { this.renderizarSuscriber() }
       </React.Fragment>
     );
   }

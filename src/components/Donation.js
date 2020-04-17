@@ -5,18 +5,23 @@ import {
 
 class Donation extends Component {
   state = { 
-    nombre: this.props.nombre,
-    existencias: this.props.existencias,
-    precio: this.props.precio,
+    suscriber: this.props.suscriber, // nombre
+    amount: this.props.amount, // existencias
+    message: this.props.message, // precio
   }
+/* usar este: 
+  suscriber: String,
+    amount: Number,
+    message: String,
+    */
 
   render() { 
     return ( 
       <Card className="mt-3" style={{ backgroundColor: '#ae51f5' }}>
         <CardBody>
-          <CardTitle style={{ color: 'white' }}>{ this.state.nombre }</CardTitle>
+          <CardTitle style={{ color: 'white' }}>{ this.state.suscriber }</CardTitle>
           <CardText style={{ color: 'white' }}>
-            {`Existencias: ${this.state.existencias} - Precio: ${this.state.precio}`}
+            {`Existencias: ${this.state.amount} - Precio: ${this.state.message}`}
           </CardText>
         </CardBody>
       </Card>
