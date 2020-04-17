@@ -10,24 +10,24 @@ import axios from 'axios';
 
 class CreateSuscriber extends Component {
   state = { 
-    nombre: '',
-    precio: 0,
-    existencias: 0,
+    Nickname: '',
+    pin: 0 ,
+    email: '' ,
   }
 
   cambiarInput = (e) => {
     console.log(e.target.value);
     switch (e.target.name) {
-      case 'nombre':
-        this.setState({ nombre: e.target.value })
+      case 'Nickname':
+        this.setState({ Nickname: e.target.value })
         break;
 
-      case 'precio':
-        this.setState({ precio: e.target.value })
+      case 'pin':
+        this.setState({ pin: e.target.value })
         break;
 
-      case 'existencias':
-        this.setState({ existencias: e.target.value })
+      case 'email':
+        this.setState({ email: e.target.value })
         break;
     
       default:
@@ -37,43 +37,43 @@ class CreateSuscriber extends Component {
 
   manejarSubmit = () => {
     const jsonSend = this.state;
-    const URL = 'https://supermercado-devf.herokuapp.com/api/v1/articulos';
+    const URL = 'https://api-gt.herokuapp.com/api/v1/Subscribers';
     axios.post(URL, jsonSend)
-      .then(res => alert('¡Artículo creado!'))
-      .catch(err => alert('Error al crear artículo'))
-  };
+      .then(res => alert('Suscripción creada'))
+      .catch(err => alert(`Error al crear suscripción`)
+      )};
 
   render() { 
     return ( 
       <React.Fragment>
-        <h3>Crear Artículo</h3>
+        <h3>Suscripción</h3>
 
         <Form>
           <FormGroup>
-            <Label>Nombre</Label>
+            <Label>Nickname</Label>
             <Input
-              value={this.state.nombre}
+              value={this.state.Nickname}
               onChange={this.cambiarInput}
               type="text" 
-              name="nombre"/>
+              name="Nickname"/>
           </FormGroup>
           <FormGroup>
-            <Label>Precio</Label>
+            <Label>pin</Label>
             <Input 
-              value={this.state.precio}
+              value={this.state.pin}
               onChange={this.cambiarInput}
               type="number"
-              name="precio"/>
+              name="pin"/>
           </FormGroup>
           <FormGroup>
-            <Label>Existencias</Label>
+            <Label>Email</Label>
             <Input 
-              value={this.state.existencias}
+              value={this.state.email}
               onChange={this.cambiarInput}
-              type="number"
-              name="existencias"/>
+              type="string"
+              name="email"/>
           </FormGroup>
-          <Button onClick={this.manejarSubmit}>Submit</Button>
+          <Button color="success" onClick={this.manejarSubmit}>Submit</Button>
         </Form>
   
       </React.Fragment>
