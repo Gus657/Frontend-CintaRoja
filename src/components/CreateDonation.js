@@ -10,24 +10,24 @@ import axios from 'axios';
 
 class CreateDonation extends Component {
   state = { 
-    nombre: '',
-    precio: 0,
-    existencias: 0,
+    suscriber: '',
+    amount: 0,
+    message: '',
   }
 
   cambiarInput = (e) => {
     console.log(e.target.value);
     switch (e.target.name) {
       case 'nombre':
-        this.setState({ nombre: e.target.value })
+        this.setState({ suscriber: e.target.value })
         break;
 
-      case 'precio':
-        this.setState({ precio: e.target.value })
+      case 'monto':
+        this.setState({ amount: e.target.value })
         break;
 
-      case 'existencias':
-        this.setState({ existencias: e.target.value })
+      case 'message':
+        this.setState({ message: e.target.value })
         break;
     
       default:
@@ -37,43 +37,43 @@ class CreateDonation extends Component {
 
   manejarSubmit = () => {
     const jsonSend = this.state;
-    const URL = 'https://supermercado-devf.herokuapp.com/api/v1/articulos';
+    const URL = 'https://api-gt.herokuapp.com/api/v1/Donations';
     axios.post(URL, jsonSend)
-      .then(res => alert('¡Artículo creado!'))
-      .catch(err => alert('Error al crear artículo'))
+      .then(res => alert('Donacion Creada!'))
+      .catch(err => alert('Error al Crear DOnacion'))
   };
 
   render() { 
     return ( 
       <React.Fragment>
-        <h3>Crear Artículo</h3>
+        <h3>Crear Donación</h3>
 
         <Form>
           <FormGroup>
             <Label>Nombre</Label>
             <Input
-              value={this.state.nombre}
+              value={this.state.suscriber}
               onChange={this.cambiarInput}
               type="text" 
               name="nombre"/>
           </FormGroup>
           <FormGroup>
-            <Label>Precio</Label>
+            <Label>Monto</Label>
             <Input 
-              value={this.state.precio}
+              value={this.state.amount}
               onChange={this.cambiarInput}
               type="number"
-              name="precio"/>
+              name="monto"/>
           </FormGroup>
           <FormGroup>
-            <Label>Existencias</Label>
+            <Label>Mensaje</Label>
             <Input 
-              value={this.state.existencias}
+              value={this.state.message}
               onChange={this.cambiarInput}
-              type="number"
-              name="existencias"/>
+              type="text"
+              name="message"/>
           </FormGroup>
-          <Button onClick={this.manejarSubmit}>Submit</Button>
+          <Button onClick={this.manejarSubmit}>Crear</Button>
         </Form>
   
       </React.Fragment>
