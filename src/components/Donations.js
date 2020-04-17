@@ -28,21 +28,28 @@ class Donations extends Component {
 
   renderizarSuscriber() {
     const { suscribers } = this.state;
+    let amount = 0
     if (suscribers.length === 0) {
       return <span>Cargando suscriptores...</span>
     } else if (suscribers.length > 0) {
       // ¿Cómo itero y muestro cada elemento de mi arreglo de artículos?
       return (
         <React.Fragment>
-          <span>Estas son las donaciones que tenemos registradas: {suscribers.length} suscribers</span>
+
+
+          <span>Estas son las donaciones que tenemos registradas: {suscribers.length} Donadores</span>
           { suscribers.map(nickname => {
+            amount+= nickname.amount
             return (
               <Suscriber 
                 message={nickname.message}
                 amount={nickname.amount}
                 suscriber={nickname.suscriber} />
+              
             )
+            
           })}
+          <h3>{`El total de donaciones es ${amount}. Gracias por tu ayuda!`}</h3>
         </React.Fragment>
       )
     }
