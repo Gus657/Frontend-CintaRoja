@@ -43,7 +43,7 @@ const Navigation = (props) => {
                 </NavLink>
             </NavItem>
           </Nav>
-          <NavbarText>BIKEBOO</NavbarText>
+          <NavbarText>CMI</NavbarText>
         </Collapse>
       </Navbar>
     </div>
