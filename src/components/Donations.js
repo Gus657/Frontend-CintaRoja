@@ -4,7 +4,7 @@ import Suscriber from './Donation';
 
 class Donations extends Component {
   state = {
-    titulo: "Donaciones Registradas!",
+    titulo: "Errores Reportados",
     suscribers: [],
   };
 
@@ -16,7 +16,7 @@ class Donations extends Component {
 
   // El componente se montó
   componentDidMount() {
-    const URL = 'https://api-gt.herokuapp.com/api/v1/Donations';
+    const URL = 'https://api-tics.herokuapp.com/error-list';
     
     axios.get(URL)
       .then(response => {
@@ -28,28 +28,26 @@ class Donations extends Component {
 
   renderizarSuscriber() {
     const { suscribers } = this.state;
-    let amount = 0
     if (suscribers.length === 0) {
-      return <span>Cargando suscriptores...</span>
+      return <span>Cargando Errores...</span>
     } else if (suscribers.length > 0) {
       // ¿Cómo itero y muestro cada elemento de mi arreglo de artículos?
       return (
         <React.Fragment>
 
 
-          <span>Estas son las donaciones que tenemos registradas: {suscribers.length} Donadores</span>
+          <span>Estos son los errores Reportados a la Fecha: {suscribers.length} Errores</span>
           { suscribers.map(nickname => {
-            amount+= nickname.amount
             return (
               <Suscriber 
                 message={nickname.message}
-                amount={nickname.amount}
-                suscriber={nickname.suscriber} />
+                date={nickname.date}
+                title={nickname.title} />
               
             )
             
           })}
-          <h3>{`El total de donaciones es ${amount}. Gracias por tu ayuda!`}</h3>
+    
         </React.Fragment>
       )
     }
