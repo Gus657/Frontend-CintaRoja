@@ -19,11 +19,11 @@ class CreateDonation extends Component {
     console.log(e.target.value);
     switch (e.target.name) {
       case 'title':
-        this.setState({ suscriber: e.target.value })
+        this.setState({ title: e.target.value })
         break;
 
       case 'date':
-        this.setState({ amount: e.target.value })
+        this.setState({ date: e.target.value })
         break;
 
       case 'message':
@@ -73,7 +73,7 @@ class CreateDonation extends Component {
               type="text"
               name="message"/>
           </FormGroup>
-          <Button onClick={this.manejarSubmit}>Crear Reorte</Button>
+          <Button onClick={this.manejarSubmit}>Crear Reporte</Button>
         </Form>
   
       </React.Fragment>
