@@ -6,8 +6,8 @@ import CreateDonation from './components/CreateDonation';
 
 export default [
   <React.Fragment key={"Routes"}>
-      <Route exact path="/donations" component={ Donations } ></Route>
-      <Route exact path="/new-donation" component={ CreateDonation} ></Route>
+      <Route exact path="/error-list" component={ Donations } ></Route>
+      <Route exact path="/error-report" component={ CreateDonation} ></Route>
       <Route exact path="/" component={ Donations} ></Route>
   </React.Fragment>
 ];

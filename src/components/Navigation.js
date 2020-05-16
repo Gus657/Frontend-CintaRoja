@@ -29,12 +29,12 @@ const Navigation = (props) => {
           <Nav className="mr-auto" navbar>
             <NavItem>
               <NavLink>
-                <Link to="/new-donation">Reportar Nuevo</Link>
+                <Link to="/error-report">Reportar Nuevo</Link>
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink>
-                <Link to="/donations">Errores Reportados</Link>
+                <Link to="/error-list">Errores Reportados</Link>
               </NavLink>
             </NavItem>
           </Nav>
