@@ -8,7 +8,6 @@ export default [
   <React.Fragment key={"Routes"}>
       <Route exact path="/donations" component={ Donations } ></Route>
       <Route exact path="/new-donation" component={ CreateDonation} ></Route>
-      <Route exact path="/suscribers" component={ CreateSuscriber} ></Route>
-      <Route exact path="/" component={ CreateSuscriber} ></Route>
+      <Route exact path="/" component={ Donations} ></Route>
   </React.Fragment>
 ];
