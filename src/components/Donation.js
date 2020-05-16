@@ -13,11 +13,11 @@ class Donation extends Component {
 
   render() { 
     return ( 
-      <Card className="mt-3" style={{ backgroundColor: '#32CD32' }}>
+      <Card className="mt-3" style={{ backgroundColor: '#149cfc' }}>
         <CardBody>
           <CardTitle style={{ color: 'white' }}>{ this.state.title }</CardTitle>
           <CardText style={{ color: 'white' }}>
-            {`Donación: ${this.state.date} - Mensaje: ${this.state.message}`}
+            {`Fecha: ${this.state.date} - Error: ${this.state.message}`}
           </CardText>
         </CardBody>
       </Card>
