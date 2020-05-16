@@ -23,24 +23,19 @@ const Navigation = (props) => {
   return (
     <div>
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">Proyecto</NavbarBrand>
+        <NavbarBrand href="/">Prototipo</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
               <NavLink>
-                <Link to="/suscribers">Suscribers</Link>
+                <Link to="/suscribers">Reportar Nuevo</Link>
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink>
-                <Link to="/donations">Donations</Link>
+                <Link to="/donations">Errores Reportados</Link>
               </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink>
-                  <Link to="/new-donation">New Donation</Link>
-                </NavLink>
             </NavItem>
           </Nav>
           <NavbarText>CMI</NavbarText>
