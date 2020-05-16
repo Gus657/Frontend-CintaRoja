@@ -37,7 +37,7 @@ class CreateDonation extends Component {
 
   manejarSubmit = () => {
     const jsonSend = this.state;
-    const URL = 'https://api-tics.herokuapp.com/error-list';
+    const URL = 'https://api-tics.herokuapp.com/error-report';
     axios.post(URL, jsonSend)
       .then(res => alert('Error Reportado!'))
       .catch(err => alert('Error al reportar Error'))
