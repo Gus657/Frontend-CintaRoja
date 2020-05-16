@@ -10,19 +10,19 @@ import axios from 'axios';
 
 class CreateDonation extends Component {
   state = { 
-    suscriber: '',
-    amount: 0,
+    title: '',
+    date: '2020',
     message: '',
   }
 
   cambiarInput = (e) => {
     console.log(e.target.value);
     switch (e.target.name) {
-      case 'nombre':
+      case 'title':
         this.setState({ suscriber: e.target.value })
         break;
 
-      case 'monto':
+      case 'date':
         this.setState({ amount: e.target.value })
         break;
 
@@ -37,43 +37,43 @@ class CreateDonation extends Component {
 
   manejarSubmit = () => {
     const jsonSend = this.state;
-    const URL = 'https://api-gt.herokuapp.com/api/v1/Donations';
+    const URL = 'https://api-tics.herokuapp.com/error-list';
     axios.post(URL, jsonSend)
-      .then(res => alert('Donacion Creada!'))
-      .catch(err => alert('Error al Crear DOnacion'))
+      .then(res => alert('Error Reportado!'))
+      .catch(err => alert('Error al reportar Error'))
   };
 
   render() { 
     return ( 
       <React.Fragment>
-        <h3>Crear Donación</h3>
+        <h3>Reportar Errores</h3>
 
         <Form>
           <FormGroup>
-            <Label>Nombre</Label>
+            <Label>Titulo</Label>
             <Input
-              value={this.state.suscriber}
+              value={this.state.title}
               onChange={this.cambiarInput}
               type="text" 
-              name="nombre"/>
+              name="title"/>
           </FormGroup>
           <FormGroup>
-            <Label>Monto</Label>
+            <Label>Fecha</Label>
             <Input 
-              value={this.state.amount}
+              value={this.state.date}
               onChange={this.cambiarInput}
-              type="number"
-              name="monto"/>
+              type="text"
+              name="date"/>
           </FormGroup>
           <FormGroup>
-            <Label>Mensaje</Label>
+            <Label>Error</Label>
             <Input 
               value={this.state.message}
               onChange={this.cambiarInput}
               type="text"
               name="message"/>
           </FormGroup>
-          <Button onClick={this.manejarSubmit}>Crear</Button>
+          <Button onClick={this.manejarSubmit}>Crear Reorte</Button>
         </Form>
   
       </React.Fragment>
