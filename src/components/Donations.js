@@ -58,6 +58,8 @@ class Donations extends Component {
       <React.Fragment>
         <h3>{ this.state.titulo }</h3>
         { this.renderizarSuscriber() }
+        <br/>
+        <br/> 
       </React.Fragment>
     );
   }
