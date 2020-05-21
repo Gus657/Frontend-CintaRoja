@@ -58,7 +58,7 @@ class Donations extends Component {
       <React.Fragment>
         <h3>{ this.state.titulo }</h3>
         { this.renderizarSuscriber() }
-     
+    {this.props.data.split('\n').map( (it, i) => <div key={'x'+i}>{it}</div> )}
       </React.Fragment>
     );
   }
