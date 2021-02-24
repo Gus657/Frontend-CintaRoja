@@ -25,7 +25,7 @@ const Navigation = (props) => {
           <Nav className="mr-auto" navbar>
             <NavItem>
               <NavLink>
-                <Link to="/suscribers">Suscribers</Link>
+                <Link to="/suscribers">Test</Link>
               </NavLink>
             </NavItem>
             <NavItem>
