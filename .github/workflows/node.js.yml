@@ -28,9 +28,9 @@ jobs:
     - run: git config --global user.email "ggusperezg@gmail.com"
     - run: git config --global user.name "Gus657"
     - run: npm i
-    - run: npm version patch
     - run: rm -r build
     - run: npm run build
     - run: git add .
     - run: git commit -m "New Build"
+    - run: npm version patch
     - run: git push
