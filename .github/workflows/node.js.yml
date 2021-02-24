@@ -27,8 +27,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: git config --global user.email "ggusperezg@gmail.com"
     - run: git config --global user.name "Gus657"
-    - run: npm i
-    - run: rm -r build
+    - run: npm install
+    - run: npm version patch
     - run: npm run build
     - run: git add .
     - run: git commit -m "New Build"
