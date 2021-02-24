@@ -28,5 +28,7 @@ jobs:
     - run: npm i
     - run: npm run build
     - run: git add .
+    - run: git config --global user.email "ggusperezg@gmail.com"
+    - run: git config --global user.name "Gus657"
     - run: git commit -m "New vwersion"
     - run: git push
