@@ -30,5 +30,5 @@ jobs:
     - run: git config --global user.email "ggusperezg@gmail.com"
     - run: git config --global user.name "Gus657"
     - run: git add .
-    - run: npm version patch
+    - run: git commit -m "New Version"
     - run: git push
