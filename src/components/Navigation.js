@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
+  Collapse,
   Navbar,
   NavbarToggler,
   NavbarBrand,
@@ -38,7 +39,7 @@ const Navigation = (props) => {
                 </NavLink>
             </NavItem>
           </Nav>
-          <NavbarText>BIKEBOO</NavbarText>
+          <NavbarText>EXAMPLE</NavbarText>
         </Collapse>
       </Navbar>
     </div>
