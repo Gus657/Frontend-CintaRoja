@@ -30,7 +30,7 @@ const Navigation = (props) => {
             </NavItem>
             <NavItem>
               <NavLink>
-                <Link to="/donations">Donations</Link>
+                <Link to="/donations">Test</Link>
               </NavLink>
             </NavItem>
             <NavItem>
