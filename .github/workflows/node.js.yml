@@ -31,6 +31,5 @@ jobs:
     - run: rm -r build
     - run: npm run build
     - run: git add .
-    - run: git commit -m "New Build"
     - run: npm version patch
     - run: git push
