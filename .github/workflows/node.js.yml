@@ -29,5 +29,6 @@ jobs:
     - run: git config --global user.name "Gus657"
     - run: npm install
     - run: npm run build
-    - run: npm version
+    - run: git add .
+    - run: npm version patch -f
     - run: git push
