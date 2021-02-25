@@ -17,6 +17,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "version": "npm run build && git add .",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
